@@ -10,6 +10,8 @@ jobs:
           sleep 13
           echo "checkout job"
   lint:
+    docker:
+      - image: circleci/ubuntu:latest
     steps:
       - run: 
           command: |
@@ -17,6 +19,8 @@ jobs:
             sleep 5
             echo "lint job"
   build:
+    docker:
+      - image: circleci/ubuntu:latest
     steps:
       - run: 
           command: |
@@ -24,18 +28,24 @@ jobs:
             sleep 3
             echo "build job"
   deploy-static-preview:
+    docker:
+      - image: circleci/ubuntu:latest
     steps:
       - run: 
           command: |
             sleep 17
             echo "deploy static preview job"
   unit-test:
+    docker:
+      - image: circleci/ubuntu:latest
     steps:
       - run:
           command: |
             sleep 57
             echo "unit testing job"
   e2e:
+    docker:
+      - image: circleci/ubuntu:latest
     steps:
       - run:
           command: |
@@ -45,6 +55,8 @@ jobs:
   deploy-approval:
     type: approval
   deploy:
+    docker:
+      - image: circleci/ubuntu:latest
     steps:
       - run:
           command: |
