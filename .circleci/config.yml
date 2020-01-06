@@ -53,8 +53,6 @@ jobs:
             sleep 1m
             sleep 18
             echo "end to end test job"
-  deploy-approval:
-    type: approval
   deploy:
     docker:
       - image: circleci/ubuntu:latest
@@ -85,6 +83,7 @@ workflows:
           requires:
             - build
       - deploy-approval:
+          type: approval
           requires:
             - unit-test
             - e2e
