@@ -3,12 +3,13 @@ version: 2.1
 
 jobs:
   checkout-code:
-  docker:
-    - image: circleci/ubuntu:latest
-    - run: 
-        command: |
-          sleep 13
-          echo "checkout job"
+    docker:
+      - image: circleci/ubuntu:latest
+    steps:
+      - run: 
+          command: |
+            sleep 13
+            echo "checkout job"
   lint:
     docker:
       - image: circleci/ubuntu:latest
@@ -64,9 +65,8 @@ jobs:
             echo "deploy job"
   
 workflows:
-  # Name the workflow "Welcome"
+  version: 2
   fooWorkflow:
-    # Run the welcome/run job in its own container
     jobs:
       - checkout-code
       - build:
