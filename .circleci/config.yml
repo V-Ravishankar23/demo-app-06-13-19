@@ -4,7 +4,7 @@ version: 2.1
 jobs:
   checkout-code:
     docker:
-      - image: circleci/ubuntu:latest
+      - image: circleci/node:latest
     steps:
       - run: 
           command: |
@@ -12,7 +12,7 @@ jobs:
             echo "checkout job"
   lint:
     docker:
-      - image: circleci/ubuntu:latest
+      - image: circleci/node:latest
     steps:
       - run: 
           command: |
@@ -21,7 +21,7 @@ jobs:
             echo "lint job"
   build:
     docker:
-      - image: circleci/ubuntu:latest
+      - image: circleci/node:latest
     steps:
       - run: 
           command: |
@@ -30,7 +30,7 @@ jobs:
             echo "build job"
   deploy-static-preview:
     docker:
-      - image: circleci/ubuntu:latest
+      - image: circleci/node:latest
     steps:
       - run: 
           command: |
@@ -38,7 +38,7 @@ jobs:
             echo "deploy static preview job"
   unit-test:
     docker:
-      - image: circleci/ubuntu:latest
+      - image: circleci/node:latest
     steps:
       - run:
           command: |
@@ -46,7 +46,7 @@ jobs:
             echo "unit testing job"
   e2e:
     docker:
-      - image: circleci/ubuntu:latest
+      - image: circleci/node:latest
     steps:
       - run:
           command: |
@@ -55,7 +55,7 @@ jobs:
             echo "end to end test job"
   deploy:
     docker:
-      - image: circleci/ubuntu:latest
+      - image: circleci/node:latest
     steps:
       - run:
           command: |
