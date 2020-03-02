@@ -6,7 +6,7 @@ jobs:
     docker:
       - image: circleci/node:latest
     steps:
-      - run: 
+      - run:
           command: |
             sleep 13
             echo "checkout job"
@@ -14,25 +14,23 @@ jobs:
     docker:
       - image: circleci/node:latest
     steps:
-      - run: 
+      - run:
           command: |
-            sleep 1m
             sleep 5
             echo "lint job"
   build:
     docker:
       - image: circleci/node:latest
     steps:
-      - run: 
+      - run:
           command: |
-            sleep 2m
             sleep 3
             echo "build job"
   deploy-static-preview:
     docker:
       - image: circleci/node:latest
     steps:
-      - run: 
+      - run:
           command: |
             sleep 17
             echo "deploy static preview job"
@@ -42,7 +40,7 @@ jobs:
     steps:
       - run:
           command: |
-            sleep 57
+            sleep 24
             echo "unit testing job"
   e2e:
     docker:
@@ -50,7 +48,6 @@ jobs:
     steps:
       - run:
           command: |
-            sleep 1m
             sleep 18
             echo "end to end test job"
   deploy:
@@ -61,7 +58,7 @@ jobs:
           command: |
             sleep 9
             echo "deploy job"
-  
+
 workflows:
   version: 2
   fooWorkflow:
